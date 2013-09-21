@@ -8,9 +8,9 @@
 #include <log.h>
 
 static char* prefix = NULL;
-static char prefix_buffer[PREFIX_BUFFER_SIZE];
-static char log_file_name[LOG_FILE_BUFFER_SIZE];
-static char time_buffer[TIME_BUFFER_SIZE];
+static char prefix_buffer[PREFIX_BUFFER_SIZE] = {0};
+static char log_file_name[LOG_FILE_BUFFER_SIZE] = {0};
+static char time_buffer[TIME_BUFFER_SIZE] = {0};
 static int current_log_level = MSG_LEVEL_INFO;
 static int output_type = LOG_OUTPUT_TYPE_DEBUG;
 static int full_file_name = 0;
@@ -247,7 +247,7 @@ log_msg(
 
 	        p += file_name_len;
 
-	        while (*p != '/') p--;
+	        while (file_name_len-- && *p != '/') p--;
 
 	        p++;
 
