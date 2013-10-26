@@ -30,6 +30,15 @@ mem_alloc(
 	return r;
 }
 
+void*
+mem_realloc(
+            void* ptr,
+            size_t len
+            )
+{
+  return realloc(ptr, len);
+}
+
 void
 mem_free(
          void* m
