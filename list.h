@@ -6,6 +6,12 @@ typedef struct _list {
     void* data;
 } LIST;
 
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
 uint32_t
 list_create(
             LIST** list_ptr
@@ -99,6 +105,12 @@ list_duplicate(
                LIST* src_list,
                LIST** dst_list_ptr
                );
+
+#ifdef __cplusplus
+
+}
+
+#endif
 
 #define list_set_entry_data(l, data) l->data = data
 
