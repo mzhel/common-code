@@ -241,6 +241,8 @@ log_msg(
 
 	    va_started = true;
 
+      out_buffer[0] = 0;
+
 	    if (!full_file_name){
 
 	        file_name_len = strlen(file_name);
